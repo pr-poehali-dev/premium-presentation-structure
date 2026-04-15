@@ -53,12 +53,96 @@ const zones = [
 ];
 
 const materials = [
-  { name: "Натуральный камень", spec: "Гранит серый, брусчатка 10×20 см", zone: "Дорожки" },
-  { name: "Дерево", spec: "Термодревесина лиственница, покрытие масло-воск", zone: "Настилы, скамьи" },
-  { name: "Нержавеющая сталь", spec: "Матовая, AISI 316, атмосферостойкая", zone: "Фонтаны, ограждения" },
-  { name: "Бетон", spec: "Архитектурный шлифованный, класс B30", zone: "Амфитеатр, бортики" },
-  { name: "Растения", spec: "Многолетники, злаки, кустарники — посадочный план отдельно", zone: "Озеленение" },
-  { name: "Освещение", spec: "LED, IP67, тёплый белый 2700K, управление DALI", zone: "Все зоны" },
+  {
+    name: "Натуральный камень",
+    subtitle: "Гранит серый",
+    zone: "Дорожки, площадки",
+    specs: [
+      { label: "Тип", value: "Брусчатка пилёная" },
+      { label: "Формат", value: "10×20×6 см" },
+      { label: "Цвет", value: "Серый, G654 Padang Dark" },
+      { label: "Обработка", value: "Термообработка, фаска 2 мм" },
+      { label: "Прочность", value: "R11, класс нескользкости" },
+      { label: "Применение", value: "Пешеходные дорожки, входная площадь" },
+    ],
+    color: "#3a3a3a",
+    pattern: "repeating-linear-gradient(45deg, #3a3a3a 0px, #4a4a4a 1px, #3a3a3a 8px)",
+  },
+  {
+    name: "Термодревесина",
+    subtitle: "Лиственница, сорт А",
+    zone: "Настилы, скамьи, перголы",
+    specs: [
+      { label: "Порода", value: "Лиственница сибирская" },
+      { label: "Обработка", value: "Термомодификация 180–212°C" },
+      { label: "Сечение досок", value: "28×140 мм, 45×90 мм" },
+      { label: "Покрытие", value: "Масло-воск Osmo, 2 слоя" },
+      { label: "Класс", value: "Вне помещений, класс 3.2" },
+      { label: "Применение", value: "Настилы террас, уличная мебель" },
+    ],
+    color: "#6b4226",
+    pattern: "repeating-linear-gradient(0deg, #6b4226 0px, #7d5235 2px, #6b4226 12px)",
+  },
+  {
+    name: "Нержавеющая сталь",
+    subtitle: "AISI 316L, матовая",
+    zone: "Фонтаны, ограждения, декор",
+    specs: [
+      { label: "Марка", value: "AISI 316L (1.4404)" },
+      { label: "Толщина", value: "2–4 мм в зависимости от изделия" },
+      { label: "Отделка", value: "Матовая шлифовка №4, BA" },
+      { label: "Стойкость", value: "Атмосферо- и влагостойкая" },
+      { label: "Соединения", value: "TIG-сварка, зачистка швов" },
+      { label: "Применение", value: "Чаши фонтанов, поручни, облицовка" },
+    ],
+    color: "#8a9099",
+    pattern: "repeating-linear-gradient(90deg, #8a9099 0px, #9ba3ab 1px, #8a9099 6px)",
+  },
+  {
+    name: "Архитектурный бетон",
+    subtitle: "Класс B30, W8",
+    zone: "Амфитеатр, бортики, опоры",
+    specs: [
+      { label: "Класс", value: "B30 (М400), W8" },
+      { label: "Отделка", value: "Шлифованный, открытый заполнитель" },
+      { label: "Цвет", value: "Светло-серый, белый цемент" },
+      { label: "Армирование", value: "A500C, проектная схема" },
+      { label: "Защита", value: "Гидрофобизатор Silane-Siloxane" },
+      { label: "Применение", value: "Ступени амфитеатра, борта бассейна, опоры" },
+    ],
+    color: "#c0bab2",
+    pattern: "radial-gradient(circle at 30% 30%, #d0cac2 0%, #b0aaa2 50%, #c0bab2 100%)",
+  },
+  {
+    name: "Растения",
+    subtitle: "Многолетники, злаки, кустарники",
+    zone: "Озеленение",
+    specs: [
+      { label: "Деревья", value: "Берёза, клён, рябина — крупномеры" },
+      { label: "Кустарники", value: "Спирея, дёрен, сирень" },
+      { label: "Многолетники", value: "Хосты, астильбы, гейхеры" },
+      { label: "Злаки", value: "Мискантус, овсяница, молиния" },
+      { label: "Газон", value: "Спортивный рулонный газон" },
+      { label: "Полив", value: "Автоматическая система орошения" },
+    ],
+    color: "#3a6b3a",
+    pattern: "radial-gradient(ellipse at 20% 80%, #2d5a2d 0%, #3a6b3a 40%, #4a7c3a 100%)",
+  },
+  {
+    name: "Освещение",
+    subtitle: "LED, управление DALI",
+    zone: "Все зоны",
+    specs: [
+      { label: "Тип", value: "LED, IP67 (грунтовые), IP65 (опоры)" },
+      { label: "Цветовая температура", value: "2700K — тёплый белый" },
+      { label: "Управление", value: "DALI, сценарии по расписанию" },
+      { label: "Опоры", value: "Сталь, порошковое покрытие, h=4 м" },
+      { label: "Акценты", value: "RGB-подсветка фонтанов и сцены" },
+      { label: "Потребление", value: "≈ 12 Вт/м², энергокласс А+" },
+    ],
+    color: "#c8a84b",
+    pattern: "radial-gradient(circle at 50% 50%, #e8c86b 0%, #c8a84b 40%, #a88830 100%)",
+  },
 ];
 
 export default function Index() {
@@ -288,8 +372,8 @@ export default function Index() {
       </section>
 
       {/* MATERIALS */}
-      <section id="materials" className="py-32 px-8 md:px-20 max-w-7xl mx-auto">
-        <div className="section-fade">
+      <section id="materials" className="py-32 px-8 md:px-20 bg-[#0f0f0f]">
+        <div className="section-fade max-w-7xl mx-auto">
           <div className="mb-16">
             <p className="font-montserrat text-[0.6rem] tracking-[0.3em] text-[hsl(43,74%,66%)] uppercase mb-4">05 — Материалы</p>
             <h2 className="font-cormorant text-4xl md:text-6xl font-light text-[#EDE8DE]">
@@ -297,20 +381,43 @@ export default function Index() {
             </h2>
           </div>
 
-          <div className="divide-y divide-[#1e1e1e]">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {materials.map((mat, i) => (
-              <div key={mat.name} className="py-6 grid grid-cols-12 gap-4 items-center group hover:bg-[#1a1a1a] transition-colors px-4 -mx-4">
-                <span className="col-span-1 font-montserrat text-[0.55rem] text-[#555] tracking-widest">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="col-span-4">
-                  <p className="font-cormorant text-xl text-[#EDE8DE] group-hover:text-[hsl(43,74%,66%)] transition-colors">{mat.name}</p>
+              <div key={mat.name} className="bg-[#141414] border border-[#1e1e1e] overflow-hidden group hover:border-[hsl(43,74%,30%)] transition-colors duration-300">
+                {/* Texture swatch */}
+                <div className="relative h-44 overflow-hidden"
+                  style={{ background: mat.pattern }}>
+                  <div className="absolute inset-0 flex items-center justify-center"
+                    style={{ background: "rgba(0,0,0,0.35)" }}>
+                    <div className="text-center">
+                      <p className="font-cormorant text-3xl text-white/90 font-light">{mat.name}</p>
+                      <p className="font-montserrat text-[0.6rem] tracking-widest text-white/60 uppercase mt-1">{mat.subtitle}</p>
+                    </div>
+                  </div>
+                  <div className="absolute top-3 left-3">
+                    <span className="font-montserrat text-[0.55rem] tracking-widest text-white/40">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="absolute top-3 right-3">
+                    <span className="font-montserrat text-[0.55rem] tracking-[0.2em] text-[hsl(43,74%,66%)] uppercase bg-black/50 px-2 py-1">
+                      {mat.zone}
+                    </span>
+                  </div>
                 </div>
-                <div className="col-span-5">
-                  <p className="font-montserrat text-[0.65rem] text-[#9a9490] leading-relaxed">{mat.spec}</p>
-                </div>
-                <div className="col-span-2 text-right">
-                  <span className="font-montserrat text-[0.6rem] tracking-widest text-[hsl(43,74%,66%)] uppercase">{mat.zone}</span>
+
+                {/* Specs table */}
+                <div className="p-5 divide-y divide-[#1e1e1e]">
+                  {mat.specs.map((spec) => (
+                    <div key={spec.label} className="py-2 flex justify-between gap-4">
+                      <span className="font-montserrat text-[0.58rem] tracking-widest text-[#555] uppercase shrink-0 pt-0.5">
+                        {spec.label}
+                      </span>
+                      <span className="font-montserrat text-[0.65rem] text-[#9a9490] text-right leading-relaxed">
+                        {spec.value}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
