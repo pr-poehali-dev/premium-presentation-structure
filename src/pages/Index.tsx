@@ -155,7 +155,7 @@ export default function Index() {
             <p className="font-montserrat text-[0.6rem] tracking-[0.3em] text-[hsl(43,74%,66%)] uppercase mb-6">01 — Концепция</p>
             <h2 className="font-cormorant text-4xl md:text-6xl font-light leading-tight text-[#EDE8DE] mb-8">
               Пространство<br />
-              <em className="text-[hsl(43,74%,66%)]">для людей</em>
+              <em className="text-[hsl(43,74%,66%)]">для людей и вас</em>
             </h2>
             <div className="gold-line mb-8" />
             <p className="font-montserrat text-sm leading-relaxed text-[#9a9490] mb-6">
