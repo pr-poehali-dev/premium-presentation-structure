@@ -134,7 +134,7 @@ export default function Index() {
           <h1 className="animate-hero-title font-cormorant font-light leading-none tracking-tight text-[#EDE8DE]"
             style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}>
             Парк<br />
-            <em className="text-[hsl(43,74%,66%)]">«Клокшино»</em>
+            <em className="text-[hsl(43,74%,66%)]">«Клокшино» ыыы</em>
           </h1>
           <p className="animate-hero-sub font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9a9490] mt-6 uppercase">
             Илья Смирдин · Ландшафтный дизайнер
